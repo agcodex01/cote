@@ -30,9 +30,6 @@
                             <td>{{ $subject->description }} </td>
                             <td>{{ $subject->units }} </td>
                             <td>
-                                <a href="{{ route("subjects.show", $subject) }}" class="btn btn-text">
-                                    <i class="fa fa-eye text-info"></i>
-                                </a>
                                 <button class="btn btn-text btn-edit" data-toggle="modal" data-target="#edit"
                                     data-code="{{ $subject->code }}" data-description="{{ $subject->description }}"
                                     data-units="{{ $subject->units }}" data-id="{{ $subject->id }}">
