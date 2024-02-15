@@ -1,8 +1,8 @@
 {
-    "name": "laravel/laravel",
+    "name": "agcodex/cote",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "description": "College Of Technology and Engineering",
+    "keywords": ["cote", "sms"],
     "license": "MIT",
     "require": {
         "php": "^8.1",

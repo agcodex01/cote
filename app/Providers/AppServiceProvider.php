@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Consts\UserConstant;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +23,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Paginator::useBootstrap();
+
+        Blade::if('role', fn (string $type) => Auth::user()->type === $type);
     }
 }
