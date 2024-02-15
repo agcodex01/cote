@@ -34,7 +34,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('students.grades.print');
+    return view('welcome');
 })->name('landing.page');
 
 Route::middleware('auth')->group(function () {

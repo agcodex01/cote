@@ -7,24 +7,26 @@
         <div class="card-body">
             <div class="row mt-3">
                 <div class="col-4">
-                    Course & Year: <strong>BSIT-II</strong>
+                    Course & Year: <strong>{{ $studentClass->course->code }} - {{ $studentClass->yearLevel->name }}</strong>
                 </div>
                 <div class="col-4">
-                    School Year: <strong>2021-2022</strong>
+                    School Year: <strong>{{ $schoolYear?->from->format("Y") }} -
+                        {{ $schoolYear?->to->format("Y") }}</strong>
                 </div>
                 <div class="col-4">
-                    Semester: <strong>1st</strong>
+                    Semester: <strong>{{ $studentClass->semester->name }}</strong>
                 </div>
             </div>
             <div class="row mt-4">
                 <div class="col-4">
-                    Name: <strong>Gerald Afable</strong>
+                    Name: <strong>{{ $student->user->getFullname() }}</strong>
                 </div>
                 <div class="col-4">
-                    Room & Section: <strong>RM 1 - Sec 1</strong>
+                    Room & Section: <strong>{{ $studentClass->section->room->name }} -
+                        {{ $studentClass->section->name }}</strong>
                 </div>
                 <div class="col-4">
-                    Adviser: <strong>Jocelyn</strong>
+                    Adviser: <strong>{{ $studentClass->section->teacher->user->getFullname() }}</strong>
                 </div>
             </div>
             <table class="table mt-5">
@@ -38,12 +40,12 @@
                 </thead>
                 <tbody>
                     @foreach ($student->grades->where("year_level_id", $yearLevelId)->where("semester_id", $semesterId) as $grade)
-                            <td>{{ $grade->subject->code }} </td>
-                            <td>{{ $grade->subject->description }}</td>
-                            <td>{{ $grade->mid ?? "-" }}</td>
-                            <td>{{ $grade->final ?? "-" }}</td>
-                            <td>{{ $grade->average ?? "-" }}</td>
-                            <td>{{ $grade->remarks ?? "-" }}</td>
+                        <td>{{ $grade->subject->code }} </td>
+                        <td>{{ $grade->subject->description }}</td>
+                        <td>{{ $grade->mid ?? "-" }}</td>
+                        <td>{{ $grade->final ?? "-" }}</td>
+                        <td>{{ $grade->average ?? "-" }}</td>
+                        <td>{{ $grade->remarks ?? "-" }}</td>
                         </tr>
                     @endforeach
                 </tbody>
