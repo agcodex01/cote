@@ -22,7 +22,7 @@ class StudentClassController extends Controller
     {
         $headers = ['Student Classes'];
 
-        $studentClasses = StudentClass::filter($filter)->groupBy('student_id')->paginate(10);
+        $studentClasses = StudentClass::filter($filter)->paginate(10);
 
         $courses = Course::all();
         $students = Student::all();

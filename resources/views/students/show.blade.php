@@ -10,8 +10,7 @@
                     {{ $student->user->getFullname() }} Details
                 </div>
                 <div>
-                    <a href="{{ route("students.edit", $student) }}" class="btn btn-outline-info px-4">View Grade</a>
-                    <a href="{{ route("students.edit", $student) }}" class="btn btn-outline-success px-4">View Schedule</a>
+
                     <a href="{{ route("students.edit", $student) }}" class="btn btn-primary px-4">Edit</a>
                 </div>
 
