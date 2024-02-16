@@ -118,6 +118,8 @@ class StudentClassController extends Controller
      */
     public function destroy(StudentClass $studentClass)
     {
-        //
+        $studentClass->delete();
+
+        return back()->with('success', 'Student Class Successfully Deleted!');
     }
 }
